@@ -2,6 +2,11 @@ package com.zhufeng.design.pattern.creational.simplefactory;
 
 public class VideoFactory {
 
+	/**
+	 * 一定程度上解决开闭原则
+	 * @param clz
+	 * @return
+	 */
 	public Video getVideoByClass(Class<?> clz) {
 		Video video = null;
 		try {
