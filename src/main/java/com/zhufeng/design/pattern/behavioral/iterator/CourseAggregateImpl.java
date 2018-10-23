@@ -1,23 +1,30 @@
 package com.zhufeng.design.pattern.behavioral.iterator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CourseAggregateImpl implements CourseAggregate {
+	
+	private List<Course> courseList;
+	
+	public CourseAggregateImpl() {
+		super();
+		this.courseList = new ArrayList<>();
+	}
 
 	@Override
 	public void addCourse(Course course) {
-		// TODO Auto-generated method stub
-
+		courseList.add(course);
 	}
 
 	@Override
 	public void removeCourse(Course course) {
-		// TODO Auto-generated method stub
-
+		courseList.remove(course);
 	}
 
 	@Override
 	public CourseIterator getCourseIterator() {
-		// TODO Auto-generated method stub
-		return null;
+		return new CourseIteratorImpl(courseList);
 	}
 
 }
