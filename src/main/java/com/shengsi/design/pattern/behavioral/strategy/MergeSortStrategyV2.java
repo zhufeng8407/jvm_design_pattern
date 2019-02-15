@@ -11,8 +11,10 @@ public class MergeSortStrategyV2 implements Strategy {
 
     private void mergeSort(int[] arr, int l, int r) {
 
-        if (l >= r)
+        if (r - l <= 15) {
+            InsertionSortStrategyV2.insertionSort(arr, l, r);
             return;
+        }
         int mid = (l + r)/2;
         mergeSort(arr, l, mid);
         mergeSort(arr, mid + 1, r);
