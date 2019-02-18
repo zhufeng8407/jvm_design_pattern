@@ -27,9 +27,10 @@ public class QuickSortStrategyV3 implements Strategy {
         int j = r;
 
         while(true) {
-            if (i > j) break;
+
             while(i <= r && arr[i] < value) i++;
             while(j >= l + 1 && arr[j] > value) j--;
+            if (i > j) break;   // 注意必须放下面
             swap(arr, i, j);
             i++;
             j--;
@@ -42,7 +43,7 @@ public class QuickSortStrategyV3 implements Strategy {
     public static void main(String[] args) {
         int[] arr = new int[]{4,7,9,3,1,2,12,11,19,87,21,29,39,37,25,33,25, 25, 25, 26, 26, 26, 26, 26};
 
-        new QuickSortStrategy().sort(arr);
+        new QuickSortStrategyV3().sort(arr);
 
         for (int i : arr) {
             System.out.print(i + ", ");

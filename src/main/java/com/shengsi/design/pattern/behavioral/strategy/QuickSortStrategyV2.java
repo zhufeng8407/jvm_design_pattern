@@ -40,7 +40,7 @@ public class QuickSortStrategyV2 implements Strategy {
     public static void main(String[] args) {
         int[] arr = new int[]{4,7,9,3,1,2,12,11,19,87,21,29,39,37,25,33,25};
 
-        new QuickSortStrategy().sort(arr);
+        new QuickSortStrategyV2().sort(arr);
 
         for (int i : arr) {
             System.out.print(i + ", ");
